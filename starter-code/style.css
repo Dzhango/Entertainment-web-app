@@ -1,0 +1,10 @@
+body {
+    background-color: #10141E;
+    color: white;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
