@@ -1,10 +1,105 @@
+/* TAC CSS https://jordanbrennan.hashnode.dev/tac-a-new-css-methodology */
+
+
+/* 
+    0. Global
+    1. Tag
+    2. Attribute
+    3. Class
+*/
+
+
+/* Global */
+
+:root {
+    --red: #FC4747;
+    --black: #10141E;
+    --light-purple: #5A698F;
+    --dark-purple: #161D2F;
+    --white: #FFFFFF;
+    --base-fs: 18px;
+    --medium-fs: 24px;
+    --large-fs: 32px;
+    --base-mobile-fs: 13px;
+    --medium-mobile-fs: 15px;
+    --light-fw: 300;
+    --medium-fw: 500;
+}
+
+
+/* Tag */
+
 body {
-    background-color: #10141E;
+    background-color: var(--black);
     color: white;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 nav {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    padding: 2rem 0.5rem;
+    justify-content: space-between;
+    background-color: var(--dark-purple);
+    align-items: center;
+    margin: 1rem;
+    border-radius: 3rem;
+}
+
+#logo {
+    flex-basis: 5rem;
+}
+
+header {
+    padding: 2rem 0;
+}
+
+search-bar {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+input[type="text"] {
+    font-size: var(--medium-fs);
+    background: transparent;
+    border: none;
+    color: white;
+    width: 100%;
+    overflow: hidden;
+    caret-color: var(--red);
+    outline: none;
+    box-shadow: var(--dark-purple) 0 5px;
+}
+
+
+/* Attributes */
+
+
+/* Class */
+
+.menu-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    flex: 1;
+}
+
+.icon-wrapper {
+    cursor: pointer;
+}
+
+.icon-wrapper:hover {
+    background-color: var(--red);
+}
+
+.icon-wrapper:active {
+    background-color: var(--white);
+}
+
+.search-text-wrapper {
+    flex: 1;
 }
