@@ -11,10 +11,15 @@
 
 /* Global */
 
+@font-face {
+    font-family: 'Outfit';
+    src: url('./Outfit/Outfit-VariableFont_wght.ttf') format('truetype');
+}
+
 :root {
     --red: #FC4747;
     --black: #10141E;
-    --light-purple: #5A698F;
+    --light-purple: rgba(90, 105, 143);
     --dark-purple: #161D2F;
     --white: #FFFFFF;
     --base-fs: 18px;
@@ -33,7 +38,15 @@ body {
     background-color: var(--black);
     color: white;
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
+    font-family: 'Outfit', Arial, Helvetica, sans-serif;
+    gap: 1rem;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+svg {
+    display: block;
 }
 
 nav {
@@ -45,6 +58,7 @@ nav {
     align-items: center;
     margin: 1rem;
     border-radius: 3rem;
+    user-select: none
 }
 
 #logo {
@@ -52,7 +66,7 @@ nav {
 }
 
 header {
-    padding: 2rem 0;
+    margin: 2rem 0;
 }
 
 search-bar {
@@ -63,6 +77,7 @@ search-bar {
 }
 
 input[type="text"] {
+    padding: 0.5rem 0;
     font-size: var(--medium-fs);
     background: transparent;
     border: none;
@@ -71,7 +86,145 @@ input[type="text"] {
     overflow: hidden;
     caret-color: var(--red);
     outline: none;
-    box-shadow: var(--dark-purple) 0 5px;
+}
+
+input[type="text"]:focus {
+    box-shadow: var(--light-purple) 0 1px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+t-carousel {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: nowrap;
+    margin-bottom: 3rem;
+    min-width: 1280px;
+}
+
+
+/* T-movie component */
+
+t-movie {
+    max-width: 470px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    cursor: pointer;
+    flex: 1 1 0;
+}
+
+t-movie img {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    z-index: -1;
+    opacity: 0.6;
+}
+
+favorite-icon {
+    grid-column: -1 / -2;
+    grid-row: 1 / 2;
+    align-self: end;
+    justify-self: center;
+    padding: 0.5rem;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+favorite-icon[state="selected"] path {
+    fill: white;
+}
+
+t-movie div[title="movie-data"] {
+    grid-row: 4 / 6;
+    grid-column: 1 /4;
+    align-self: center;
+    padding-left: 2rem;
+}
+
+t-movie div[title="play-button"] {
+    grid-area: 2 / 2 / 5 /5;
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    gap: 1rem;
+    padding: 0.5rem 1.25rem 0.5rem 0.5rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40%;
+    background-color: rgba(255, 255, 255, 0.2);
+    max-width: 6rem;
+    visibility: hidden;
+    user-select: none
+}
+
+t-movie:hover div[title="play-button"] {
+    visibility: visible;
+}
+
+t-movie div[title="play-button"]:active {
+    transform: translateY(3px);
+    opacity: 0.75;
+}
+
+t-movie ul {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    gap: 0.5rem;
+    font-size: calc(var(--base-fs)*0.75);
+    opacity: 0.75;
+    list-style-type: none;
+}
+
+t-movie p {
+    font-size: var(--medium-fs);
+}
+
+
+/* MOVIE component */
+
+movie {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    max-width: 240px;
+    cursor: pointer;
+    height: auto;
+}
+
+movie img {
+    grid-area: 1 / 1 / 6 / 6;
+}
+
+movie favorite-icon {
+    grid-column: 5 /6;
+    grid-row: 1 / 3;
+    align-self: center;
+    justify-self: center;
+}
+
+movie ul {
+    grid-column: 1 / 2;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    gap: 0.5rem;
+    font-size: calc(var(--base-fs)*0.75);
+    opacity: 0.75;
+    list-style-type: none;
+}
+
+movie div[title="movie-data"] {
+    grid-column: 1 /4;
+    margin-top: 0.5rem;
+}
+
+movie p {
+    font-size: var(--base-fs);
 }
 
 
@@ -102,4 +255,18 @@ input[type="text"] {
 
 .search-text-wrapper {
     flex: 1;
+}
+
+.carousel-header {
+    margin: 2rem 0;
+    font-size: var(--large-fs);
+    font-weight: var(--light-fw);
+}
+
+.margin-right-sm {
+    margin-right: 0.3rem;
+}
+
+.fs-small {
+    font-size: calc(var(--base-fs)*0.75);
 }

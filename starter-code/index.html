@@ -14,9 +14,11 @@
 
 <!-- NOTES -->
 <!-- 
-Results page could be a component with changing title
-Separate component for trending movies? 
-
+    fix menu icons hover
+    fix movie image height
+    add movie play button and hover states
+    
+    - Note favorite bookmarks are their own svgs, do not mess with fill!.
 -->
 
 <body>
@@ -42,32 +44,80 @@ Separate component for trending movies?
             </search-bar>
         </header>
         <section>
-            <p>Trending</p>
+            <div class="carousel-header">
+                <p>Trending</p>
+            </div>
             <t-carousel>
                 <t-movie>
-                    <img src="./assets/thumbnails/beyond-earth/trending/large.jpg" alt="">
-                    <favorite-icon></favorite-icon>
-                    <ul>
-                        <li id="year">2019</li>
-                        <li id="type">Movie</li>
-                        <li id="grade">PG</li>
-                    </ul>
-                    <p>Beyond Earth</p>
+                    <img src="./assets/thumbnails/beyond-earth/trending/large.jpg" alt="movie">
+                    <favorite-icon state=""><svg width="12" height="14" xmlns="http://www.w3.org/2000/svg"><path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z" stroke="#FFF" stroke-width="1.5" fill="none"/></svg></favorite-icon>
+                    <div title="movie-data">
+                        <ul>
+                            <li id="year">2019</li>
+                            <li id="icon"><svg width="12" height="12" xmlns="http://www.w3.org/2000/svg"><path d="M10.173 0H1.827A1.827 1.827 0 0 0 0 1.827v8.346C0 11.183.818 12 1.827 12h8.346A1.827 1.827 0 0 0 12 10.173V1.827A1.827 1.827 0 0 0 10.173 0ZM2.4 5.4H1.2V4.2h1.2v1.2ZM1.2 6.6h1.2v1.2H1.2V6.6Zm9.6-1.2H9.6V4.2h1.2v1.2ZM9.6 6.6h1.2v1.2H9.6V6.6Zm1.2-4.956V2.4H9.6V1.2h.756a.444.444 0 0 1 .444.444ZM1.644 1.2H2.4v1.2H1.2v-.756a.444.444 0 0 1 .444-.444ZM1.2 10.356V9.6h1.2v1.2h-.756a.444.444 0 0 1-.444-.444Zm9.6 0a.444.444 0 0 1-.444.444H9.6V9.6h1.2v.756Z" fill="#FFF" opacity=".75"/></svg></li>
+                            <li id="type">Movie</li>
+                            <li id="grade">PG</li>
+                        </ul>
+                        <p>Beyond Earth</p>
+                    </div>
+                    <div title="play-button">
+                        <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg"><path d="M15 0C6.713 0 0 6.713 0 15c0 8.288 6.713 15 15 15 8.288 0 15-6.712 15-15 0-8.287-6.712-15-15-15Zm-3 21V8l9 6.5-9 6.5Z" fill="#FFF"/></svg>
+                        <p>Play</p>
+                    </div>
+                </t-movie>
+                <t-movie>
+                    <img src="./assets/thumbnails/bottom-gear/trending/large.jpg" alt="movie">
+                    <favorite-icon state=""><svg width="12" height="14" xmlns="http://www.w3.org/2000/svg"><path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z" stroke="#FFF" stroke-width="1.5" fill="none"/></svg></favorite-icon>
+                    <div title="movie-data">
+                        <ul>
+                            <li id="year">2021</li>
+                            <li id="icon"><svg width="12" height="12" xmlns="http://www.w3.org/2000/svg"><path d="M10.173 0H1.827A1.827 1.827 0 0 0 0 1.827v8.346C0 11.183.818 12 1.827 12h8.346A1.827 1.827 0 0 0 12 10.173V1.827A1.827 1.827 0 0 0 10.173 0ZM2.4 5.4H1.2V4.2h1.2v1.2ZM1.2 6.6h1.2v1.2H1.2V6.6Zm9.6-1.2H9.6V4.2h1.2v1.2ZM9.6 6.6h1.2v1.2H9.6V6.6Zm1.2-4.956V2.4H9.6V1.2h.756a.444.444 0 0 1 .444.444ZM1.644 1.2H2.4v1.2H1.2v-.756a.444.444 0 0 1 .444-.444ZM1.2 10.356V9.6h1.2v1.2h-.756a.444.444 0 0 1-.444-.444Zm9.6 0a.444.444 0 0 1-.444.444H9.6V9.6h1.2v.756Z" fill="#FFF" opacity=".75"/></svg></li>
+                            <li id="type">Movie</li>
+                            <li id="grade">PG</li>
+                        </ul>
+                        <p>Bottom Gear</p>
+                    </div>
+                    <div title="play-button">
+                        <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg"><path d="M15 0C6.713 0 0 6.713 0 15c0 8.288 6.713 15 15 15 8.288 0 15-6.712 15-15 0-8.287-6.712-15-15-15Zm-3 21V8l9 6.5-9 6.5Z" fill="#FFF"/></svg>
+                        <p>Play</p>
+                    </div>
+                </t-movie>
+                <t-movie>
+                    <img src="./assets/thumbnails/undiscovered-cities/trending/large.jpg" alt="movie">
+                    <favorite-icon state=""><svg width="12" height="14" xmlns="http://www.w3.org/2000/svg"><path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z" stroke="#FFF" stroke-width="1.5" fill="none"/></svg></favorite-icon>
+                    <div title="movie-data">
+                        <ul>
+                            <li>2019</li>
+                            <li><svg width="12" height="12" xmlns="http://www.w3.org/2000/svg"><path d="M10.173 0H1.827A1.827 1.827 0 0 0 0 1.827v8.346C0 11.183.818 12 1.827 12h8.346A1.827 1.827 0 0 0 12 10.173V1.827A1.827 1.827 0 0 0 10.173 0ZM2.4 5.4H1.2V4.2h1.2v1.2ZM1.2 6.6h1.2v1.2H1.2V6.6Zm9.6-1.2H9.6V4.2h1.2v1.2ZM9.6 6.6h1.2v1.2H9.6V6.6Zm1.2-4.956V2.4H9.6V1.2h.756a.444.444 0 0 1 .444.444ZM1.644 1.2H2.4v1.2H1.2v-.756a.444.444 0 0 1 .444-.444ZM1.2 10.356V9.6h1.2v1.2h-.756a.444.444 0 0 1-.444-.444Zm9.6 0a.444.444 0 0 1-.444.444H9.6V9.6h1.2v.756Z" fill="#FFF" opacity=".75"/></svg></li>
+                            <li>Movie</li>
+                            <li>PG</li>
+                        </ul>
+                        <p>Undiscovered Cities</p>
+                    </div>
+                    <div title="play-button">
+                        <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg"><path d="M15 0C6.713 0 0 6.713 0 15c0 8.288 6.713 15 15 15 8.288 0 15-6.712 15-15 0-8.287-6.712-15-15-15Zm-3 21V8l9 6.5-9 6.5Z" fill="#FFF"/></svg>
+                        <p>Play</p>
+                    </div>
                 </t-movie>
             </t-carousel>
         </section>
         <section>
-            <p>Recommended for you</p>
+            <div class="carousel-header">
+                <p>Recommended for you</p>
+            </div>
             <movie-grid>
                 <movie>
-                    <img src="./assets/thumbnails/the-great-lands/regular/large.jpg" alt="">
-                    <favorite-icon></favorite-icon>
-                    <ul>
-                        <li id="year">2019</li>
-                        <li id="type">Movie</li>
-                        <li id="grade">PG</li>
-                    </ul>
-                    <p></p>
+                    <img src="./assets/thumbnails/the-great-lands/regular/large.jpg" alt="thumbnail The Great Lands">
+                    <favorite-icon><img src="assets/icon-bookmark-empty.svg" alt="bookmark empty"></favorite-icon>
+                    <div title="movie-data">
+                        <ul>
+                            <li>2019</li>
+                            <li><img src="assets/icon-category-movie.svg" alt="icon movie"></li>
+                            <li>Movie</li>
+                            <li>PG</li>
+                        </ul>
+                        <p>The Great Lands</p>
+                    </div>
                 </movie>
             </movie-grid>
         </section>
